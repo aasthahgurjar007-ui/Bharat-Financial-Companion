@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bharat Financial Companion - HackOut'26 Ideation Report</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+    color: #1e293b;
+    background-color: #f8fafc;
+    line-height: 1.4;
+    font-size: 11px;
+  }
+  .page {
+    width: 210mm;
+    height: 297mm;
+    max-height: 297mm;
+    min-height: 297mm;
+    padding: 13mm 16mm 12mm 16mm;
+    page-break-after: always;
+    page-break-inside: avoid;
+    position: relative;
+    background: #ffffff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Running Header & Footer */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid #e2e8f0;
+    margin-bottom: 11px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .header-badge {
+    background: #0f172a;
+    color: #38bdf8;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    padding: 2.5px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .header-title {
+    font-size: 10.5px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: 0.3px;
+  }
+  .header-right {
+    font-size: 9px;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.2px;
+  }
+
+  .page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 6px;
+    border-top: 1.5px solid #e2e8f0;
+    font-size: 8.5px;
+    color: #64748b;
+    margin-top: auto;
+  }
+  .footer-tag {
+    font-weight: 700;
+    color: #0284c7;
+  }
+
+  /* Typography & Utilities */
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #e0f2fe;
+    color: #0284c7;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    padding: 2.5px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .section-heading {
+    font-size: 18px;
+    font-weight: 850;
+    color: #0f172a;
+    letter-spacing: -0.3px;
+    line-height: 1.22;
+    margin-bottom: 4px;
+  }
+  .section-subtitle {
+    font-size: 10.5px;
+    color: #475569;
+    margin-bottom: 12px;
+    line-height: 1.38;
+  }
+
+  /* Cards & Containers */
+  .card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 10px 13px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  }
+  .card-highlight {
+    background: #f8fafc;
+    border-left: 3.5px solid #0284c7;
+  }
+  .card-emerald {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 3.5px solid #10b981;
+  }
+  .card-amber {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-left: 3.5px solid #f59e0b;
+  }
+  .card-indigo {
+    background: #eef2ff;
+    border: 1px solid #c7d2fe;
+    border-left: 3.5px solid #6366f1;
+  }
+  .card-rose {
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    border-left: 3.5px solid #f43f5e;
+  }
+
+  /* Grid Layouts */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 9px;
+  }
+  .grid-4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 8px;
+  }
+
+  /* Highlights */
+  .pill {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 12px;
+    font-size: 8px;
+    font-weight: 700;
+  }
+  .pill-blue { background: #dbeafe; color: #1d4ed8; }
+  .pill-green { background: #dcfce7; color: #15803d; }
+  .pill-amber { background: #fef3c7; color: #b45309; }
+  .pill-purple { background: #f3e8ff; color: #7e22ce; }
+  .pill-rose { background: #ffe4e6; color: #be123c; }
+
+  /* Flow Steps */
+  .arrow-right {
+    font-size: 13px;
+    font-weight: 800;
+    color: #0284c7;
+  }
+  .arrow-down {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 800;
+    color: #0284c7;
+    margin: 2px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER & EXECUTIVE PROPOSAL -->
+<div class="page" id="page-1" style="background: linear-gradient(175deg, #070d1e 0%, #0b152d 38%, #111e38 100%); color: #ffffff; padding: 14mm 17mm 12mm 17mm;">
+  <div>
+    <!-- Top HackOut Header -->
+    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.18);">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="background: #38bdf8; color: #070d1e; font-weight: 900; font-size: 11px; padding: 3px 9px; border-radius: 4px; letter-spacing: 0.8px;">HACKOUT’26</span>
+        <span style="font-size: 10.5px; font-weight: 700; color: #94a3b8; letter-spacing: 0.5px;">OFFICIAL IDEATION REPORT & ARCHITECTURE PROPOSAL</span>
+      </div>
+      <div style="font-size: 10.5px; color: #38bdf8; font-weight: 800; border: 1.5px solid rgba(56,189,248,0.5); padding: 3px 12px; border-radius: 14px; background: rgba(56,189,248,0.12);">
+        TEAM: LOGIC LEGENDS
+      </div>
+    </div>
+
+    <!-- Official Problem Statement & Theme Box -->
+    <div style="margin-top: 14px; background: rgba(255, 255, 255, 0.05); border: 1.5px solid rgba(56, 189, 248, 0.45); border-radius: 10px; padding: 12px 16px; backdrop-filter: blur(8px);">
+      <div style="display: grid; grid-template-columns: 1.25fr 1px 0.85fr; gap: 14px; align-items: center;">
+        <div>
+          <div style="font-size: 8.5px; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 3px;">
+            OFFICIAL PROBLEM STATEMENT
+          </div>
+          <div style="font-size: 12.5px; font-weight: 750; color: #ffffff; line-height: 1.3;">
+            [INSERT OFFICIAL PROBLEM STATEMENT NUMBER AND EXACT TITLE]
+          </div>
+          <div style="font-size: 9px; color: #94a3b8; margin-top: 3px;">
+            Track Focus: Hyper-Personalized Digital Banking & Vernacular AI Inclusion
+          </div>
+        </div>
+        <div style="background: rgba(255,255,255,0.15); height: 100%;"></div>
+        <div>
+          <div style="font-size: 8.5px; font-weight: 800; color: #34d399; text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 3px;">
+            HACKOUT’26 THEME
+          </div>
+          <div style="font-size: 12.5px; font-weight: 750; color: #ffffff; line-height: 1.3;">
+            [INSERT HACKOUT’26 THEME]
+          </div>
+          <div style="font-size: 9px; color: #94a3b8; margin-top: 3px;">
+            Core Paradigm: Customer-Centric AI Financial Intelligence
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Title Block -->
+    <div style="margin-top: 18px;">
+      <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); padding: 3px 11px; border-radius: 14px; margin-bottom: 9px;">
+        <span style="font-size: 9px; color: #7dd3fc; font-weight: 800; letter-spacing: 0.7px; text-transform: uppercase;">Next-Gen FinTech Architecture</span>
+      </div>
+      <h1 style="font-size: 33px; font-weight: 900; line-height: 1.08; letter-spacing: -0.5px; color: #ffffff; margin-bottom: 5px;">
+        BHARAT FINANCIAL<br>
+        <span style="background: linear-gradient(90deg, #38bdf8 0%, #34d399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">COMPANION</span>
+      </h1>
+      <div style="font-size: 14.5px; font-weight: 700; color: #cbd5e1; letter-spacing: 0.2px; margin-bottom: 12px;">
+        AI-Powered Hyper-Personalized Banking for Bharat
+      </div>
+      
+      <!-- Tagline banner -->
+      <div style="background: linear-gradient(90deg, rgba(2, 132, 199, 0.3) 0%, rgba(16, 185, 129, 0.3) 100%); border-left: 4px solid #38bdf8; padding: 10px 14px; border-radius: 0 8px 8px 0; margin-bottom: 15px;">
+        <div style="font-size: 13px; font-weight: 800; color: #f8fafc; font-style: italic; letter-spacing: 0.2px;">
+          “Understand the customer. Guide the customer. Don’t just sell to the customer.”
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Pillars Row -->
+    <div class="grid-4" style="margin-bottom: 15px;">
+      <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 8px 9px; text-align: center;">
+        <div style="font-size: 9.5px; font-weight: 800; color: #38bdf8;">CUSTOMER-CENTRIC</div>
+        <div style="font-size: 8px; color: #94a3b8; margin-top: 2px;">Goal & life-stage empathy</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 8px 9px; text-align: center;">
+        <div style="font-size: 9.5px; font-weight: 800; color: #34d399;">EXPLAINABLE AI</div>
+        <div style="font-size: 8px; color: #94a3b8; margin-top: 2px;">Why this? Why now? Alternatives</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 8px 9px; text-align: center;">
+        <div style="font-size: 9.5px; font-weight: 800; color: #f59e0b;">RESPONSIBLE AI</div>
+        <div style="font-size: 8px; color: #94a3b8; margin-top: 2px;">Stress as support, not sales</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 8px 9px; text-align: center;">
+        <div style="font-size: 9.5px; font-weight: 800; color: #a78bfa;">VERNACULAR VOICE</div>
+        <div style="font-size: 8px; color: #94a3b8; margin-top: 2px;">English, Hindi & Hinglish</div>
+      </div>
+    </div>
+
+    <!-- Paradigm Shift Comparison Box -->
+    <div style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(255,255,255,0.15); border-radius: 9px; padding: 11px 14px; margin-bottom: 14px;">
+      <div style="font-size: 9px; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 7px; text-align: center;">
+        THE FUNDAMENTAL PARADIGM SHIFT IN DIGITAL BANKING
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 26px 1fr; gap: 10px; align-items: center;">
+        <!-- Old way -->
+        <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.35); border-radius: 7px; padding: 8px 10px;">
+          <div style="font-size: 8.5px; font-weight: 800; color: #f87171; margin-bottom: 3px; text-transform: uppercase;">
+            ✕ Traditional Digital Banking
+          </div>
+          <div style="font-size: 10.5px; font-weight: 700; color: #fecaca; margin-bottom: 3px;">
+            Transaction → Generic Product Offer
+          </div>
+          <div style="font-size: 8px; color: #cbd5e1; line-height: 1.35;">
+            Product-push model. High friction, irrelevant personal loan alerts, blind to customer stress and real life milestones.
+          </div>
+        </div>
+
+        <div style="text-align: center; color: #38bdf8; font-weight: 900; font-size: 14px;">
+          VS
+        </div>
+
+        <!-- Bharat Companion -->
+        <div style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.4); border-radius: 7px; padding: 8px 10px;">
+          <div style="font-size: 8.5px; font-weight: 800; color: #34d399; margin-bottom: 3px; text-transform: uppercase;">
+            ✓ Bharat Financial Companion
+          </div>
+          <div style="font-size: 10.5px; font-weight: 700; color: #a7f3d0; margin-bottom: 3px;">
+            Understanding → Need/Goal → Next Best Action
+          </div>
+          <div style="font-size: 8px; color: #cbd5e1; line-height: 1.35;">
+            Customer-first intelligence. Evaluates goal feasibility, suggests 3 explainable alternatives, and provides empathetic coaching.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Executive Brief Card -->
+    <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 9px; padding: 11px 14px; margin-bottom: 14px;">
+      <div style="font-size: 9px; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 5px;">
+        EXECUTIVE SUMMARY & HACKATHON VALUE PROPOSITION
+      </div>
+      <p style="font-size: 9px; color: #cbd5e1; line-height: 1.42; margin-bottom: 6px;">
+        Indian banking has reached record digital penetration, yet <strong>over 400M aspirational users in Tier 2/3 cities and rural India</strong> remain underserved by product-centric lending algorithms. When users seek guidance for milestone goals—such as purchasing a scooter, funding vocational education, or building an emergency buffer—they are instead bombarded with generic high-interest personal loans.
+      </p>
+      <p style="font-size: 9px; color: #cbd5e1; line-height: 1.42;">
+        <strong>Bharat Financial Companion</strong> introduces an intelligent personalization layer that converts customer financial signals into an understandable picture, assesses goal feasibility without pressure, and provides explainable alternatives in native tongues.
+      </p>
+    </div>
+
+    <!-- 4 Key Impact Metric Callouts -->
+    <div class="grid-4" style="margin-bottom: 14px;">
+      <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 8px; padding: 8px 10px; text-align: center;">
+        <div style="font-size: 16px; font-weight: 900; color: #38bdf8;">400M+</div>
+        <div style="font-size: 7.5px; font-weight: 700; color: #94a3b8; text-transform: uppercase; margin-top: 2px;">Bharat Audience Scope</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 8px; padding: 8px 10px; text-align: center;">
+        <div style="font-size: 16px; font-weight: 900; color: #34d399;">0–100</div>
+        <div style="font-size: 7.5px; font-weight: 700; color: #94a3b8; text-transform: uppercase; margin-top: 2px;">Financial Health Index</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 8px; padding: 8px 10px; text-align: center;">
+        <div style="font-size: 16px; font-weight: 900; color: #f59e0b;">3-Tier</div>
+        <div style="font-size: 7.5px; font-weight: 700; color: #94a3b8; text-transform: uppercase; margin-top: 2px;">Explainable Alternatives</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 8px; padding: 8px 10px; text-align: center;">
+        <div style="font-size: 16px; font-weight: 900; color: #a78bfa;">48-Hour</div>
+        <div style="font-size: 7.5px; font-weight: 700; color: #94a3b8; text-transform: uppercase; margin-top: 2px;">Live Functional MVP</div>
+      </div>
+    </div>
+
+    <!-- Core Submission Metadata Banner -->
+    <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; font-size: 8px; color: #cbd5e1;">
+      <div><strong>Target Ecosystem:</strong> Public & Private Sector Banks, Regional Rural Banks (RRBs), NBFCs</div>
+      <div><strong>Deployment Mode:</strong> Lightweight API & Web Integration Layer</div>
+      <div><strong>Status:</strong> Functional Prototype Ready for Evaluation</div>
+    </div>
+  </div>
+
+  <!-- Bottom Cover Meta -->
+  <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.15); font-size: 8.5px; color: #94a3b8;">
+    <div><strong>Hackathon:</strong> HackOut’26 | <strong>Submission Track:</strong> FinTech / AI</div>
+    <div><strong>Team:</strong> Logic Legends | <strong>Prototype Status:</strong> 48-Hour Functional MVP</div>
+    <div>Page 1 of 8</div>
+  </div>
+</div>
+
+
+<!-- PAGE 2: PROBLEM UNDERSTANDING & DIFFERENTIATION -->
+<div class="page" id="page-2">
+  <div class="page-header">
+    <div class="header-left">
+      <span class="header-badge">HACKOUT’26</span>
+      <span class="header-title">BHARAT FINANCIAL COMPANION</span>
+    </div>
+    <div class="header-right">SECTION 1 & 2: PROBLEM & DIFFERENTIATION | TEAM: LOGIC LEGENDS</div>
+  </div>
+
+  <div>
+    <span class="section-tag">01. Problem Understanding</span>
+    <h2 class="section-heading">The Personalization Void in Indian Banking</h2>
+    <p class="section-subtitle">
+      Indian banking is becoming increasingly digital, but personalization is often still product-first. Users receive generic offers even when their actual need is budgeting, saving, planning, understanding financial options, or managing financial stress.
+    </p>
+
+    <!-- Comparison Grid: User Experience vs What is Missing -->
+    <div class="grid-2" style="margin-bottom: 9px;">
+      <!-- What Users Experience -->
+      <div class="card" style="border-top: 3.5px solid #ef4444; background: #fffafb; padding: 8px 11px;">
+        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 5px;">
+          <span style="background: #fee2e2; color: #b91c1c; font-size: 8px; font-weight: 800; padding: 2px 6px; border-radius: 4px;">PAIN POINTS</span>
+          <span style="font-weight: 800; font-size: 10.5px; color: #991b1b;">What Users Experience Today</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <div style="display: flex; gap: 5px; align-items: flex-start;">
+            <span style="color: #ef4444; font-weight: 800; font-size: 9.5px;">✕</span>
+            <div style="font-size: 8.5px; color: #334155; line-height: 1.3;">
+              <strong>Generic recommendations and repeated product offers:</strong> Constant personal loan and credit card pushes regardless of real user intent.
+            </div>
+          </div>
+          <div style="display: flex; gap: 5px; align-items: flex-start;">
+            <span style="color: #ef4444; font-weight: 800; font-size: 9.5px;">✕</span>
+            <div style="font-size: 8.5px; color: #334155; line-height: 1.3;">
+              <strong>Complex digital journeys and financial terminology:</strong> Intimidating jargon (APR, foreclosure charges, covenants) confuses first-time digital users.
+            </div>
+          </div>
+          <div style="display: flex; gap: 5px; align-items: flex-start;">
+            <span style="color: #ef4444; font-weight: 800; font-size: 9.5px;">✕</span>
+            <div style="font-size: 8.5px; color: #334155; line-height: 1.3;">
+              <strong>Recommendations based heavily on transactions:</strong> Algorithms observe transaction frequency while ignoring net disposable buffer and commitments.
+            </div>
+          </div>
+          <div style="display: flex; gap: 5px; align-items: flex-start;">
+            <span style="color: #ef4444; font-weight: 800; font-size: 9.5px;">✕</span>
+            <div style="font-size: 8.5px; color: #334155; line-height: 1.3;">
+              <strong>Financial stress becoming visible only after problems grow:</strong> Banks detect distress only upon bounced EMIs, triggering punitive recovery instead of early guidance.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- What Is Missing -->
+      <div class="card" style="border-top: 3.5px solid #10b981; background: #f8fdfa; padding: 8px 11px;">
+        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 5px;">
+          <span style="background: #dcfce7; color: #15803d; font-size: 8px; font-weight: 800; padding: 2px 6px; border-radius: 4px;">OPPORTUNITY</span>
+          <span style="font-weight: 800; font-size: 10.5px; color: #166534;">What Is Critically Missing</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <div style="display: flex; gap: 5px; align-items: flex-start;">
+            <span style="color: #10b981; font-weight: 800; font-size: 9.5px;">✓</span>
+            <div style="font-size: 8.5px; color: #334155; line-height: 1.3;">
+              <strong>A clear view of the customer's actual financial context:</strong> Accurate synthesis of true unencumbered surplus and recurring household dependencies.
+            </div>
+          </div>
+          <div style="display: flex; gap: 5px; align-items: flex-start;">
+            <span style="color: #10b981; font-weight: 800; font-size: 9.5px;">✓</span>
+            <div style="font-size: 8.5px; color: #334155; line-height: 1.3;">
+              <strong>Simple, conversational and vernacular guidance:</strong> Natural conversations in native Hindi, Hinglish, and regional dialects that build user confidence.
+            </div>
+          </div>
+          <div style="display: flex; gap: 5px; align-items: flex-start;">
+            <span style="color: #10b981; font-weight: 800; font-size: 9.5px;">✓</span>
+            <div style="font-size: 8.5px; color: #334155; line-height: 1.3;">
+              <strong>Understanding behaviour, goals, life stage and financial health:</strong> Aligning recommendations to life milestones rather than loan distribution targets.
+            </div>
+          </div>
+          <div style="display: flex; gap: 5px; align-items: flex-start;">
+            <span style="color: #10b981; font-weight: 800; font-size: 9.5px;">✓</span>
+            <div style="font-size: 8.5px; color: #334155; line-height: 1.3;">
+              <strong>Early, non-judgmental signals and support:</strong> Proactive alerts that gently adjust budgets before mild strain turns into severe delinquency.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Insight Callout -->
+    <div class="card card-highlight" style="margin-bottom: 9px; background: #f0f9ff; border: 1.5px solid #bae6fd; padding: 7px 11px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 16px;">💡</span>
+        <div>
+          <div style="font-size: 10px; font-weight: 800; color: #0369a1;">
+            Core Insight: Transaction Data Alone Is Not Enough.
+          </div>
+          <div style="font-size: 8.5px; color: #334155; line-height: 1.3;">
+            Income, spending, savings, EMI/payment patterns, behaviour, goals and life-stage signals together create a much stronger picture of what a customer actually needs.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Target Users 3 Cards -->
+    <div style="font-size: 9.5px; font-weight: 800; color: #0f172a; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.4px;">
+      Target Users & Needs
+    </div>
+    <div class="grid-3" style="margin-bottom: 9px;">
+      <div class="card" style="padding: 6px 9px; border-left: 3px solid #0284c7;">
+        <div style="font-size: 9px; font-weight: 800; color: #0f172a;">Tier 2/3 and Rural Users</div>
+        <div style="font-size: 7.5px; color: #64748b; margin-top: 1px; line-height: 1.3;">
+          Intimidated by English-heavy portals; require vernacular voice/Hinglish coaching, visual aids, and micro-savings guidance.
+        </div>
+      </div>
+      <div class="card" style="padding: 6px 9px; border-left: 3px solid #10b981;">
+        <div style="font-size: 9px; font-weight: 800; color: #0f172a;">Young Earners</div>
+        <div style="font-size: 7.5px; color: #64748b; margin-top: 1px; line-height: 1.3;">
+          First-job and gig earners earning ₹20k–₹50k with fluctuating expenses; vulnerable to impulse credit and unmanageable BNPL traps.
+        </div>
+      </div>
+      <div class="card" style="padding: 6px 9px; border-left: 3px solid #8b5cf6;">
+        <div style="font-size: 9px; font-weight: 800; color: #0f172a;">Goal-Oriented Customers</div>
+        <div style="font-size: 7.5px; color: #64748b; margin-top: 1px; line-height: 1.3;">
+          Individuals saving for life milestones (vehicle, emergency buffer, business inventory) requiring structured feasibility plans.
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Differentiation Flow -->
+    <span class="section-tag" style="background: #ecfdf5; color: #059669;">02. Our Differentiation</span>
+    <h3 style="font-size: 12.5px; font-weight: 800; color: #0f172a; margin-bottom: 5px;">
+      From Product-Centric Banking to Customer-Centric Financial Intelligence
+    </h3>
+
+    <!-- Process Flow Comparison Diagram -->
+    <div class="card" style="padding: 7px 10px; background: #ffffff; border: 1px solid #cbd5e1; margin-bottom: 8px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 4px; font-size: 8px;">
+        <div style="flex: 1; background: #f1f5f9; padding: 4px 5px; border-radius: 5px; text-align: center; border: 1px solid #e2e8f0;">
+          <strong style="color: #0f172a;">Customer Data</strong><br><span style="font-size: 6.5px; color: #64748b;">Multi-signal input</span>
+        </div>
+        <span class="arrow-right">→</span>
+        <div style="flex: 1.2; background: #e0f2fe; padding: 4px 5px; border-radius: 5px; text-align: center; border: 1px solid #bae6fd;">
+          <strong style="color: #0369a1;">Financial Understanding</strong><br><span style="font-size: 6.5px; color: #0284c7;">Health & Cash Flow</span>
+        </div>
+        <span class="arrow-right">→</span>
+        <div style="flex: 1.1; background: #fef3c7; padding: 4px 5px; border-radius: 5px; text-align: center; border: 1px solid #fde68a;">
+          <strong style="color: #92400e;">Need / Goal Scope</strong><br><span style="font-size: 6.5px; color: #b45309;">Feasibility Analysis</span>
+        </div>
+        <span class="arrow-right">→</span>
+        <div style="flex: 1.2; background: #dcfce7; padding: 4px 5px; border-radius: 5px; text-align: center; border: 1px solid #bbf7d0;">
+          <strong style="color: #15803d;">Explainable Options</strong><br><span style="font-size: 6.5px; color: #16a34a;">3 Viable Alternatives</span>
+        </div>
+        <span class="arrow-right">→</span>
+        <div style="flex: 1; background: #0f172a; color: #ffffff; padding: 4px 5px; border-radius: 5px; text-align: center;">
+          <strong style="color: #38bdf8;">Next Best Action</strong><br><span style="font-size: 6.5px; color: #94a3b8;">Empowered Customer</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why This Idea Is Different: 6 Core Pillars Grid -->
+    <div style="font-size: 9px; font-weight: 800; color: #0f172a; margin-bottom: 4px; text-transform: uppercase;">
+      Why This Idea Is Different
+    </div>
+    <div class="grid-3" style="gap: 5px; margin-bottom: 8px;">
+      <div class="card" style="padding: 5px 7px; border-left: 2.5px solid #0284c7;">
+        <strong style="font-size: 7.5px; color: #0284c7;">Goal-Aware Engine</strong>
+        <div style="font-size: 7px; color: #475569; margin-top: 1px;">Goal-aware rather than transaction-only. Optimizes for long-term customer milestones.</div>
+      </div>
+      <div class="card" style="padding: 5px 7px; border-left: 2.5px solid #10b981;">
+        <strong style="font-size: 7.5px; color: #059669;">Holistic Signals</strong>
+        <div style="font-size: 7px; color: #475569; margin-top: 1px;">Behaviour + financial health + life-stage based analysis instead of simple balances.</div>
+      </div>
+      <div class="card" style="padding: 5px 7px; border-left: 2.5px solid #8b5cf6;">
+        <strong style="font-size: 7.5px; color: #7c3aed;">Explainable Guidance</strong>
+        <div style="font-size: 7px; color: #475569; margin-top: 1px;">Answers “Why this? Why now?” with 100% transparent algorithmic reasoning.</div>
+      </div>
+      <div class="card" style="padding: 5px 7px; border-left: 2.5px solid #f59e0b;">
+        <strong style="font-size: 7.5px; color: #d97706;">Shows Alternatives</strong>
+        <div style="font-size: 7px; color: #475569; margin-top: 1px;">Presents multiple viable choices (save, lower loan, flexi EMI) instead of pushing one product.</div>
+      </div>
+      <div class="card" style="padding: 5px 7px; border-left: 2.5px solid #06b6d4;">
+        <strong style="font-size: 7.5px; color: #0891b2;">Vernacular Voice</strong>
+        <div style="font-size: 7px; color: #475569; margin-top: 1px;">Conversational assistance in English, Hindi, and Hinglish for non-metro earners.</div>
+      </div>
+      <div class="card" style="padding: 5px 7px; border-left: 2.5px solid #ec4899;">
+        <strong style="font-size: 7.5px; color: #db2777;">Support Signal, Not Sales</strong>
+        <div style="font-size: 7px; color: #475569; margin-top: 1px;">Uses financial stress as a support signal, not a predatory sales opportunity.</div>
+      </div>
+    </div>
+
+    <!-- Comparative Table: Product-First vs Bharat Financial Companion -->
+    <table style="width: 100%; border-collapse: collapse; font-size: 7.5px; text-align: left;">
+      <thead>
+        <tr style="background: #f1f5f9; border-bottom: 1.5px solid #cbd5e1;">
+          <th style="padding: 3.5px 6px; width: 100px;">Dimension</th>
+          <th style="padding: 3.5px 6px; color: #dc2626;">Traditional Banking (Old Way)</th>
+          <th style="padding: 3.5px 6px; color: #059669;">Bharat Financial Companion (Our Way)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #e2e8f0;">
+          <td style="padding: 3px 6px; font-weight: 700;">Core Driver</td>
+          <td style="padding: 3px 6px; color: #64748b;">Bank quarterly product & loan quotas</td>
+          <td style="padding: 3px 6px; font-weight: 700; color: #059669;">Customer goal feasibility & financial resilience</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e2e8f0;">
+          <td style="padding: 3px 6px; font-weight: 700;">Transparency</td>
+          <td style="padding: 3px 6px; color: #64748b;">Opaque algorithm pushing 1 predetermined product</td>
+          <td style="padding: 3px 6px; font-weight: 700; color: #059669;">100% Explainable: Why this? Why now? 3 Alternatives</td>
+        </tr>
+        <tr>
+          <td style="padding: 3px 6px; font-weight: 700;">Financial Stress</td>
+          <td style="padding: 3px 6px; color: #64748b;">Trigger for aggressive recovery / cross-sell loans</td>
+          <td style="padding: 3px 6px; font-weight: 700; color: #059669;">Non-judgmental support signal with budget easing</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="page-footer">
+    <div><strong>BHARAT FINANCIAL COMPANION</strong> • HackOut’26 Submission</div>
+    <div class="footer-tag">Understand • Guide • Empower</div>
+    <div>Page 2 of 8</div>
+  </div>
+</div>
+
+
+<!-- PAGE 3: SOLUTION ARCHITECTURE & 6 CORE FEATURES -->
+<div class="page" id="page-3">
+  <div class="page-header">
+    <div class="header-left">
+      <span class="header-badge">HACKOUT’26</span>
+      <span class="header-title">BHARAT FINANCIAL COMPANION</span>
+    </div>
+    <div class="header-right">SECTION 3 & 4: SOLUTION & 6 CORE FEATURES | TEAM: LOGIC LEGENDS</div>
+  </div>
+
+  <div>
+    <span class="section-tag">03. Solution Framework</span>
+    <h2 class="section-heading">An Intelligent Personalization Layer for Bharat</h2>
+    <p class="section-subtitle">
+      Bharat Financial Companion acts as an intelligent personalization layer on top of existing banking infrastructure. It converts financial signals into an understandable picture of the customer and guides them toward suitable actions.
+    </p>
+
+    <!-- Architecture Pipeline Flowchart -->
+    <div class="card" style="background: #0f172a; color: #ffffff; padding: 10px 13px; margin-bottom: 11px;">
+      <div style="font-size: 8.5px; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 6px; text-align: center;">
+        END-TO-END INTELLIGENCE PIPELINE ARCHITECTURE
+      </div>
+      <div style="display: grid; grid-template-columns: 1.15fr 16px 1.2fr 16px 1.15fr 16px 1.2fr 16px 1.15fr; align-items: center; font-size: 8px; text-align: center;">
+        
+        <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; padding: 6px 4px;">
+          <strong style="color: #38bdf8; font-size: 8.5px;">CUSTOMER DATA</strong>
+          <div style="font-size: 7px; color: #94a3b8; margin-top: 2px;">Income • Transactions • Savings • EMI • Goals • Behaviour • Life-Stage</div>
+        </div>
+
+        <div style="color: #38bdf8; font-weight: 900;">→</div>
+
+        <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; padding: 6px 4px;">
+          <strong style="color: #34d399; font-size: 8.5px;">AI ANALYSIS</strong>
+          <div style="font-size: 7px; color: #94a3b8; margin-top: 2px;">Segmentation • Anomaly Detection • Financial Health • Goal Feasibility</div>
+        </div>
+
+        <div style="color: #38bdf8; font-weight: 900;">→</div>
+
+        <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; padding: 6px 4px;">
+          <strong style="color: #facc15; font-size: 8.5px;">NEED & GOAL ID</strong>
+          <div style="font-size: 7px; color: #94a3b8; margin-top: 2px;">Understand Needs • Identify Priorities • Assess Feasibility</div>
+        </div>
+
+        <div style="color: #38bdf8; font-weight: 900;">→</div>
+
+        <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; padding: 6px 4px;">
+          <strong style="color: #f472b6; font-size: 8.5px;">RECOMMENDER</strong>
+          <div style="font-size: 7px; color: #94a3b8; margin-top: 2px;">Explainable Advice • Alternative Options • Next Best Action</div>
+        </div>
+
+        <div style="color: #38bdf8; font-weight: 900;">→</div>
+
+        <div style="background: #0284c7; border: 1px solid #38bdf8; border-radius: 6px; padding: 6px 4px;">
+          <strong style="color: #ffffff; font-size: 8.5px;">PERSONALIZED</strong>
+          <div style="font-size: 7px; color: #e0f2fe; margin-top: 2px;">Plan • Save • Review • Learn (Vernacular Voice/Text)</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 4: Six Core Features Grid -->
+    <span class="section-tag" style="background: #eef2ff; color: #4f46e5;">04. Six Core Features</span>
+    <h3 style="font-size: 13px; font-weight: 800; color: #0f172a; margin-bottom: 7px;">
+      Engineered for Practical Impact & Explainability
+    </h3>
+
+    <div class="grid-2" style="gap: 8px; margin-bottom: 10px;">
+      <!-- Feature 1 -->
+      <div class="card" style="border-left: 3.5px solid #0284c7; padding: 8px 11px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3px;">
+          <div style="font-size: 10px; font-weight: 800; color: #0f172a;">01. AI Financial Profile</div>
+          <span class="pill pill-blue">CONTEXT ENGINE</span>
+        </div>
+        <p style="font-size: 8.5px; color: #475569; line-height: 1.35;">
+          Builds a customer-level picture from income, spending, savings, EMI commitments, and transaction velocity. Identifies true unencumbered cash buffer.
+        </p>
+        <div style="margin-top: 3px; font-size: 7.5px; color: #0369a1; font-weight: 700;">
+          ✦ Discretionary cash surplus & liquidity ratio calculation
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="card" style="border-left: 3.5px solid #10b981; padding: 8px 11px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3px;">
+          <div style="font-size: 10px; font-weight: 800; color: #0f172a;">02. Life Goal Mode</div>
+          <span class="pill pill-green">GOAL PLANNING</span>
+        </div>
+        <p style="font-size: 8.5px; color: #475569; line-height: 1.35;">
+          Turns goals such as home, education, vehicle, emergency fund or business into a practical financial path. Evaluates feasibility as High, Moderate, or Tight.
+        </p>
+        <div style="margin-top: 3px; font-size: 7.5px; color: #047857; font-weight: 700;">
+          ✦ Dynamic goal timeline & recurring milestone tracking
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="card" style="border-left: 3.5px solid #f59e0b; padding: 8px 11px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3px;">
+          <div style="font-size: 10px; font-weight: 800; color: #0f172a;">03. Financial Stress Detector</div>
+          <span class="pill pill-amber">EARLY WARNING</span>
+        </div>
+        <p style="font-size: 8.5px; color: #475569; line-height: 1.35;">
+          Flags meaningful changes in spending, savings, EMI or transaction patterns and responds with support—not pressure. Proactively triggers budgeting assistance.
+        </p>
+        <div style="margin-top: 3px; font-size: 7.5px; color: #b45309; font-weight: 700;">
+          ✦ Empathetic nudges with zero predatory credit upselling
+        </div>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="card" style="border-left: 3.5px solid #6366f1; padding: 8px 11px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3px;">
+          <div style="font-size: 10px; font-weight: 800; color: #0f172a;">04. Financial Health Score (0–100)</div>
+          <span class="pill pill-purple">INDEX SYSTEM</span>
+        </div>
+        <p style="font-size: 8.5px; color: #475569; line-height: 1.35;">
+          Provides a simple 0–100 view using savings, spending, EMI burden, emergency readiness, income stability and credit discipline.
+        </p>
+        <div style="margin-top: 3px; font-size: 7.5px; color: #4338ca; font-weight: 700;">
+          ✦ Dynamic score with step-by-step improvement roadmap
+        </div>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="card" style="border-left: 3.5px solid #ec4899; padding: 8px 11px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3px;">
+          <div style="font-size: 10px; font-weight: 800; color: #0f172a;">05. Explainable Recommendations</div>
+          <span class="pill pill-rose">TRANSPARENT AI</span>
+        </div>
+        <p style="font-size: 8.5px; color: #475569; line-height: 1.35;">
+          Every recommendation transparently answers: <em>Why this? Why now? What are the alternatives?</em> Shows viable options instead of pushing a single bank product.
+        </p>
+        <div style="margin-top: 3px; font-size: 7.5px; color: #be123c; font-weight: 700;">
+          ✦ Tri-option comparison table with risk-reward trade-offs
+        </div>
+      </div>
+
+      <!-- Feature 6 -->
+      <div class="card" style="border-left: 3.5px solid #06b6d4; padding: 8px 11px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3px;">
+          <div style="font-size: 10px; font-weight: 800; color: #0f172a;">06. Vernacular AI Assistant</div>
+          <span class="pill pill-blue">NLP & VOICE</span>
+        </div>
+        <p style="font-size: 8.5px; color: #475569; line-height: 1.35;">
+          Provides conversational support in English, Hindi and Hinglish, with scope for regional-language expansion. Simplifies intimidating financial terms.
+        </p>
+        <div style="margin-top: 3px; font-size: 7.5px; color: #0e7490; font-weight: 700;">
+          ✦ Voice and text copilot with culturally attuned analogies
+        </div>
+      </div>
+    </div>
+
+    <!-- Health Score Breakdown Visual Card -->
+    <div class="card" style="background: #f8fafc; border: 1.5px solid #cbd5e1; padding: 8px 12px;">
+      <div style="font-size: 9px; font-weight: 800; color: #0f172a; margin-bottom: 4px; text-transform: uppercase;">
+        Algorithmic Financial Health Formulation (0–100 Weighted Index)
+      </div>
+      <div class="grid-3" style="font-size: 7.5px; gap: 6px;">
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 5px; padding: 4px 6px;">
+          <strong>• EMI Burden (25%):</strong> Ratio of total EMIs to net income (< 30% ideal)
+        </div>
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 5px; padding: 4px 6px;">
+          <strong>• Savings Rate (20%):</strong> Consistent monthly surplus saved (> 15% ideal)
+        </div>
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 5px; padding: 4px 6px;">
+          <strong>• Expense Ratio (20%):</strong> Essential vs discretionary spends (< 65% ideal)
+        </div>
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 5px; padding: 4px 6px;">
+          <strong>• Emergency Cushion (15%):</strong> Liquid reserves covering 3–6 months spends
+        </div>
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 5px; padding: 4px 6px;">
+          <strong>• Income Stability (10%):</strong> Regularity and source volatility index
+        </div>
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 5px; padding: 4px 6px;">
+          <strong>• Credit Discipline (10%):</strong> Timely repayment record & zero defaults
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div><strong>BHARAT FINANCIAL COMPANION</strong> • HackOut’26 Submission</div>
+    <div class="footer-tag">Understand • Guide • Empower</div>
+    <div>Page 3 of 8</div>
+  </div>
+</div>
+
+
+<!-- PAGE 4: SIGNATURE USER JOURNEY (MEENA) -->
+<div class="page" id="page-4">
+  <div class="page-header">
+    <div class="header-left">
+      <span class="header-badge">HACKOUT’26</span>
+      <span class="header-title">BHARAT FINANCIAL COMPANION</span>
+    </div>
+    <div class="header-right">SECTION 5: SIGNATURE USER JOURNEY | TEAM: LOGIC LEGENDS</div>
+  </div>
+
+  <div>
+    <span class="section-tag" style="background: #fdf2f8; color: #db2777;">05. Signature User Journey</span>
+    <h2 class="section-heading">Example: Meena – Young Working Customer</h2>
+    <p class="section-subtitle">
+      A step-by-step walkthrough demonstrating how Bharat Financial Companion converts an impulsive credit decision into an explainable, empowering life milestone.
+    </p>
+
+    <!-- Meena Persona Card -->
+    <div class="card" style="background: #f8fafc; border: 1.5px solid #cbd5e1; margin-bottom: 9px; padding: 9px 13px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; margin-bottom: 7px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div style="width: 30px; height: 30px; border-radius: 50%; background: #db2777; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px;">M</div>
+          <div>
+            <div style="font-size: 11.5px; font-weight: 800; color: #0f172a;">Customer Persona: Meena (Age 24)</div>
+            <div style="font-size: 8.5px; color: #64748b;">Customer Care Associate • Tier-2 City (Indore) • Active Goal: Buy a Scooter (₹85,000)</div>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <span class="pill pill-purple" style="font-size: 8.5px; padding: 2.5px 8px;">Baseline Health Score: 64/100</span>
+        </div>
+      </div>
+      <!-- Financial Metrics Strip -->
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; text-align: center;">
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 5px; padding: 4px;">
+          <div style="font-size: 7.5px; color: #64748b; text-transform: uppercase;">Monthly Income</div>
+          <div style="font-size: 11.5px; font-weight: 800; color: #059669;">₹35,000</div>
+        </div>
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 5px; padding: 4px;">
+          <div style="font-size: 7.5px; color: #64748b; text-transform: uppercase;">Monthly Expenses</div>
+          <div style="font-size: 11.5px; font-weight: 800; color: #e11d48;">₹23,000</div>
+        </div>
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 5px; padding: 4px;">
+          <div style="font-size: 7.5px; color: #64748b; text-transform: uppercase;">Monthly Savings</div>
+          <div style="font-size: 11.5px; font-weight: 800; color: #0284c7;">₹5,000</div>
+        </div>
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 5px; padding: 4px;">
+          <div style="font-size: 7.5px; color: #64748b; text-transform: uppercase;">Existing EMI</div>
+          <div style="font-size: 11.5px; font-weight: 800; color: #d97706;">₹4,000</div>
+        </div>
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 5px; padding: 4px;">
+          <div style="font-size: 7.5px; color: #64748b; text-transform: uppercase;">Net Free Buffer</div>
+          <div style="font-size: 11.5px; font-weight: 800; color: #4f46e5;">₹3,000/mo</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5-Step Vertical Flow with Visual Nodes -->
+    <div style="display: flex; flex-direction: column; gap: 6.5px; margin-bottom: 9px;">
+      
+      <!-- Step 1 -->
+      <div class="card" style="display: flex; gap: 9px; align-items: flex-start; padding: 6.5px 11px; border-left: 3.5px solid #0284c7;">
+        <div style="background: #e0f2fe; color: #0284c7; font-weight: 800; font-size: 9.5px; padding: 2px 7px; border-radius: 4px; white-space: nowrap;">
+          STEP 1
+        </div>
+        <div style="flex: 1;">
+          <div style="font-size: 10px; font-weight: 800; color: #0f172a;">UNDERSTAND: The system builds Meena’s financial profile.</div>
+          <div style="font-size: 8px; color: #475569; line-height: 1.35; margin-top: 1px;">
+            The system analyzes income regularity, essential living spends (₹23,000), recurring monthly savings (₹5,000), and an existing smartphone EMI of ₹4,000. It computes unencumbered monthly liquidity at ₹3,000.
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="card" style="display: flex; gap: 9px; align-items: flex-start; padding: 6.5px 11px; border-left: 3.5px solid #6366f1;">
+        <div style="background: #eef2ff; color: #4f46e5; font-weight: 800; font-size: 9.5px; padding: 2px 7px; border-radius: 4px; white-space: nowrap;">
+          STEP 2
+        </div>
+        <div style="flex: 1;">
+          <div style="font-size: 10px; font-weight: 800; color: #0f172a;">ANALYSE: Goal feasibility is assessed using income, expenses, savings and existing EMI.</div>
+          <div style="font-size: 8px; color: #475569; line-height: 1.35; margin-top: 1px;">
+            A ₹85,000 scooter with standard 2-year financing requires ₹4,100/mo EMI. Adding this to Meena's existing ₹4,000 EMI pushes total EMI to ₹8,100 (23.1% of income), exceeding her ₹3,000 net free buffer and jeopardizing emergency readiness.
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="card" style="display: flex; gap: 9px; align-items: flex-start; padding: 6.5px 11px; border-left: 3.5px solid #f59e0b;">
+        <div style="background: #fffbeb; color: #d97706; font-weight: 800; font-size: 9.5px; padding: 2px 7px; border-radius: 4px; white-space: nowrap;">
+          STEP 3
+        </div>
+        <div style="flex: 1;">
+          <div style="font-size: 10px; font-weight: 800; color: #0f172a;">RESPOND: AI identifies the goal feasibility as Moderate and explains the key financial constraint.</div>
+          <div style="font-size: 8px; color: #475569; line-height: 1.35; margin-top: 1px;">
+            The engine marks goal feasibility as <strong>“MODERATE WITH CAUTION”</strong>. The AI transparently communicates: <em>“Existing smartphone EMI of ₹4,000 restricts new monthly borrowing until month 4, when the phone loan matures.”</em>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="card" style="display: flex; gap: 9px; align-items: flex-start; padding: 6.5px 11px; border-left: 3.5px solid #10b981; background: #f0fdf4;">
+        <div style="background: #dcfce7; color: #15803d; font-weight: 800; font-size: 9.5px; padding: 2px 7px; border-radius: 4px; white-space: nowrap;">
+          STEP 4
+        </div>
+        <div style="flex: 1;">
+          <div style="font-size: 10px; font-weight: 800; color: #166534;">OFFER OPTIONS: The system provides multiple options:</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-top: 3px;">
+            <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 5px; padding: 4px 6px;">
+              <strong style="color: #047857; font-size: 8px;">Option 1: Save for 6 Months</strong>
+              <div style="font-size: 7.5px; color: #334155; margin-top: 1px;">Save ₹4,500/mo after phone EMI ends. A 35% down-payment reduces the loan to ₹50k, dropping EMI to ₹2,350/mo.</div>
+            </div>
+            <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 5px; padding: 4px 6px;">
+              <strong style="color: #047857; font-size: 8px;">Option 2: Lower Loan Amount</strong>
+              <div style="font-size: 7.5px; color: #334155; margin-top: 1px;">Consider a certified electric/pre-owned scooter (₹55,000), bringing the EMI safely to ₹2,400/mo immediately.</div>
+            </div>
+            <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 5px; padding: 4px 6px;">
+              <strong style="color: #047857; font-size: 8px;">Option 3: Compare Affordable EMIs</strong>
+              <div style="font-size: 7.5px; color: #334155; margin-top: 1px;">Compare 36-month tenure options at ₹2,750/mo EMI, keeping monthly outgo within Meena's ₹3,000 buffer.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="card" style="display: flex; gap: 9px; align-items: flex-start; padding: 6.5px 11px; border-left: 3.5px solid #06b6d4;">
+        <div style="background: #cffafe; color: #0891b2; font-weight: 800; font-size: 9.5px; padding: 2px 7px; border-radius: 4px; white-space: nowrap;">
+          STEP 5
+        </div>
+        <div style="flex: 1;">
+          <div style="font-size: 10px; font-weight: 800; color: #0f172a;">EXPLAIN: Every recommendation is connected to Meena’s actual financial context.</div>
+          <div style="font-size: 8px; color: #475569; line-height: 1.35; margin-top: 1px;">
+            Rather than a generic product push, AI Assistant explains: <em>“Meena ji, abhi ₹4,100 ki nayi EMI lene se aapka monthly budget tight ho jayega kyunki phone ki EMI chal rahi hai. Agar aap 3 mahine ruk kar ₹15,000 down-payment save karein, toh scooter bhi aayega aur emergency savings bhi safe rahegi!”</em>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Simulated Chat Interaction Box -->
+    <div class="card" style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 7px 11px; margin-bottom: 8px;">
+      <div style="font-size: 8.5px; font-weight: 800; color: #0284c7; text-transform: uppercase; margin-bottom: 4px;">
+        AI CONVERSATIONAL INTERACTION (IN-APP HINGLISH VIEW)
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px; font-size: 8px;">
+        <div style="align-self: flex-end; background: #e0f2fe; color: #0369a1; padding: 4px 8px; border-radius: 8px 8px 1px 8px; max-width: 80%;">
+          <strong>Meena:</strong> “Mujhe agle mahine scooter lena hai ₹85,000 ka. Kya meri salary se loan manage ho jayega?”
+        </div>
+        <div style="align-self: flex-start; background: #ffffff; color: #1e293b; padding: 4px 8px; border-radius: 8px 8px 8px 1px; border: 1px solid #e2e8f0; max-width: 88%;">
+          <strong>Bharat Companion:</strong> “Meena ji, aapki monthly bachat ₹5,000 hai aur phone ki ₹4,000 EMI abhi 3 mahine bachi hai. Agar abhi ₹4,100 ki nayi EMI li, toh aapka kharcha budget se bahar ho jayega. Humne aapke liye 3 safe options banaye hain—Option 1 chunenge toh ₹12,000 interest bhi bachega!”
+        </div>
+      </div>
+    </div>
+
+    <!-- Why This Journey Matters Callout -->
+    <div class="card" style="background: #0f172a; color: #ffffff; padding: 8px 12px; border: 1px solid #334155;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <div style="font-size: 10px; font-weight: 800; color: #38bdf8; text-transform: uppercase;">
+            Why This Journey Matters
+          </div>
+          <div style="font-size: 8px; color: #cbd5e1; margin-top: 1px;">
+            A single journey demonstrates: <strong>Personalization + Responsible Guidance + Explainability + Goal Planning</strong>.
+          </div>
+        </div>
+        <div style="display: flex; gap: 5px;">
+          <span style="background: rgba(56,189,248,0.15); color: #38bdf8; font-size: 7.5px; font-weight: 700; padding: 2px 7px; border-radius: 4px;">NO PREDATORY LOANS</span>
+          <span style="background: rgba(52,211,153,0.15); color: #34d399; font-size: 7.5px; font-weight: 700; padding: 2px 7px; border-radius: 4px;">100% EXPLAINABLE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div><strong>BHARAT FINANCIAL COMPANION</strong> • HackOut’26 Submission</div>
+    <div class="footer-tag">Understand • Guide • Empower</div>
+    <div>Page 4 of 8</div>
+  </div>
+</div>
+
+
+<!-- PAGE 5: AI/ML APPROACH & SYSTEM ARCHITECTURE -->
+<div class="page" id="page-5">
+  <div class="page-header">
+    <div class="header-left">
+      <span class="header-badge">HACKOUT’26</span>
+      <span class="header-title">BHARAT FINANCIAL COMPANION</span>
+    </div>
+    <div class="header-right">SECTION 6 & 7: AI/ML & ARCHITECTURE | TEAM: LOGIC LEGENDS</div>
+  </div>
+
+  <div>
+    <span class="section-tag" style="background: #f3e8ff; color: #7e22ce;">06. AI / ML Approach</span>
+    <h2 class="section-heading">Pragmatic, Explainable & Scalable AI</h2>
+    <p class="section-subtitle">
+      The prototype will use a practical and explainable AI approach rather than attempting to train a complex foundation model from scratch. Deterministic financial scoring combines with machine learning segmentation and vernacular NLP.
+    </p>
+
+    <!-- 3-Column AI/ML Subsystems -->
+    <div class="grid-3" style="margin-bottom: 9px;">
+      <!-- Signals -->
+      <div class="card" style="border-top: 3.5px solid #0284c7; padding: 7px 10px;">
+        <div style="font-size: 9px; font-weight: 800; color: #0284c7; margin-bottom: 3px;">INPUT SIGNALS</div>
+        <div style="font-size: 7.5px; color: #475569; display: flex; flex-direction: column; gap: 2.5px;">
+          <div>• <strong>Income:</strong> Regularity & volatility index</div>
+          <div>• <strong>Transactions:</strong> Frequency & velocity</div>
+          <div>• <strong>Spending Categories:</strong> Essential vs luxury</div>
+          <div>• <strong>Savings:</strong> Liquid balances & deposit cadence</div>
+          <div>• <strong>EMI/Payment Patterns:</strong> Debt service ratio</div>
+          <div>• <strong>Goals:</strong> Target amount & priority horizon</div>
+          <div>• <strong>Life-Stage Signals:</strong> Career stage & family needs</div>
+        </div>
+      </div>
+
+      <!-- Logic / AI -->
+      <div class="card" style="border-top: 3.5px solid #8b5cf6; padding: 7px 10px;">
+        <div style="font-size: 9px; font-weight: 800; color: #7c3aed; margin-bottom: 3px;">AI / LOGIC ENGINES</div>
+        <div style="font-size: 7.5px; color: #475569; display: flex; flex-direction: column; gap: 2.5px;">
+          <div>• <strong>Behavioural Segmentation:</strong> Persona clusters</div>
+          <div>• <strong>Recommendation Engine:</strong> Decision matrices</div>
+          <div>• <strong>Anomaly Detection:</strong> Isolation Forests</div>
+          <div>• <strong>NLP Assistant:</strong> Hindi/Hinglish intent parser</div>
+          <div>• <strong>Rule + Score Model:</strong> 0–100 health index</div>
+          <div>• <strong>Feasibility Solver:</strong> Constraint simulator</div>
+          <div>• <strong>Ethical Guardrails:</strong> Over-leverage filter</div>
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="card" style="border-top: 3.5px solid #10b981; padding: 7px 10px;">
+        <div style="font-size: 9px; font-weight: 800; color: #059669; margin-bottom: 3px;">SYSTEM OUTPUTS</div>
+        <div style="font-size: 7.5px; color: #475569; display: flex; flex-direction: column; gap: 2.5px;">
+          <div>• <strong>Customer Profile:</strong> Holistic financial persona</div>
+          <div>• <strong>Financial Health Score:</strong> 0–100 gauge</div>
+          <div>• <strong>Goal Feasibility:</strong> High / Moderate / Tight</div>
+          <div>• <strong>Explainable Recommendations:</strong> Why & Why Now</div>
+          <div>• <strong>Stress Alerts:</strong> Non-judgmental early warnings</div>
+          <div>• <strong>Conversational Guidance:</strong> Vernacular advice</div>
+          <div>• <strong>Actionable Plans:</strong> Safe milestone roadmaps</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deep Dive: AI Subsystems Functionality -->
+    <div class="grid-2" style="gap: 7px; margin-bottom: 9px;">
+      <div class="card" style="padding: 6px 9px; background: #f8fafc; border-left: 3px solid #6366f1;">
+        <div style="font-size: 8px; font-weight: 800; color: #4338ca; margin-bottom: 1px;">BEHAVIOURAL SEGMENTATION & ANOMALY</div>
+        <div style="font-size: 7px; color: #475569; line-height: 1.35;">
+          Clusters users into spending personas using RFM and Isolation Forests. Flags sudden drops in balance or spikes in high-interest debt without human bias.
+        </div>
+      </div>
+      <div class="card" style="padding: 6px 9px; background: #f8fafc; border-left: 3px solid #10b981;">
+        <div style="font-size: 8px; font-weight: 800; color: #047857; margin-bottom: 1px;">EXPLAINABLE RECOMMENDATION ENGINE</div>
+        <div style="font-size: 7px; color: #475569; line-height: 1.35;">
+          Rule + scoring model determines next best actions. Every suggestion links back to mathematical cash buffers, eliminating opaque algorithmic black boxes.
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 7: System Architecture -->
+    <span class="section-tag" style="background: #ecfeff; color: #0891b2;">07. System Architecture</span>
+    <h3 style="font-size: 12.5px; font-weight: 800; color: #0f172a; margin-bottom: 5px;">
+      Multi-Layered Modular Architecture
+    </h3>
+
+    <!-- Architecture Visual Blueprint -->
+    <div class="card" style="background: #f8fafc; border: 1.5px solid #cbd5e1; padding: 7px 10px; margin-bottom: 8px;">
+      <div style="display: flex; flex-direction: column; gap: 4px; font-size: 7.5px;">
+        
+        <!-- Layer 1: Client -->
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 5px; padding: 4px 8px; display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-weight: 800; color: #0284c7; width: 130px;">CUSTOMER</div>
+          <div style="flex: 1; display: flex; gap: 4px; justify-content: flex-end;">
+            <span class="pill pill-blue">Dashboard</span>
+            <span class="pill pill-purple">AI Chat</span>
+            <span class="pill pill-green">Goal Mode</span>
+          </div>
+        </div>
+        <div class="arrow-down">↓</div>
+
+        <!-- Layer 2: Data Layer -->
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 5px; padding: 4px 8px; display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-weight: 800; color: #059669; width: 130px;">DATA LAYER</div>
+          <div style="flex: 1; display: flex; gap: 4px; justify-content: flex-end;">
+            <span class="pill pill-green">Income</span>
+            <span class="pill pill-blue">Transactions</span>
+            <span class="pill pill-amber">Goals</span>
+            <span class="pill pill-purple">Savings</span>
+            <span class="pill pill-rose">EMI</span>
+          </div>
+        </div>
+        <div class="arrow-down">↓</div>
+
+        <!-- Layer 3: AI Analysis Layer -->
+        <div style="background: #f1f5f9; border: 1.5px solid #0284c7; border-radius: 5px; padding: 4px 8px; display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-weight: 800; color: #0f172a; width: 130px;">AI ANALYSIS LAYER</div>
+          <div style="flex: 1; display: flex; gap: 4px; justify-content: flex-end;">
+            <span class="pill pill-purple">Behaviour Segmentation</span>
+            <span class="pill pill-blue">Anomaly Detection</span>
+            <span class="pill pill-green">Goal Analysis</span>
+            <span class="pill pill-amber">Financial Health</span>
+          </div>
+        </div>
+        <div class="arrow-down">↓</div>
+
+        <!-- Layer 4: Recommendation Engine -->
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 5px; padding: 4px 8px; display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-weight: 800; color: #d97706; width: 130px;">RECOMMENDATION ENGINE</div>
+          <div style="flex: 1; display: flex; gap: 4px; justify-content: flex-end;">
+            <span class="pill pill-amber">Need Identification</span>
+            <span class="pill pill-blue">Explainability (“Why This”)</span>
+            <span class="pill pill-green">Alternatives Engine</span>
+          </div>
+        </div>
+        <div class="arrow-down">↓</div>
+
+        <!-- Layer 5: Personalized Experience -->
+        <div style="background: #0f172a; color: #ffffff; border-radius: 5px; padding: 4px 8px; display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-weight: 800; color: #38bdf8; width: 130px;">PERSONALIZED EXPERIENCE</div>
+          <div style="flex: 1; display: flex; gap: 4px; justify-content: flex-end;">
+            <span style="background: rgba(56,189,248,0.2); color: #38bdf8; font-size: 7px; font-weight: 700; padding: 1.5px 6px; border-radius: 10px;">Score</span>
+            <span style="background: rgba(52,211,153,0.2); color: #34d399; font-size: 7px; font-weight: 700; padding: 1.5px 6px; border-radius: 10px;">Insights</span>
+            <span style="background: rgba(245,158,11,0.2); color: #f59e0b; font-size: 7px; font-weight: 700; padding: 1.5px 6px; border-radius: 10px;">Goal Mode</span>
+            <span style="background: rgba(244,63,94,0.2); color: #fb7185; font-size: 7px; font-weight: 700; padding: 1.5px 6px; border-radius: 10px;">Alerts</span>
+            <span style="background: rgba(167,139,250,0.2); color: #c084fc; font-size: 7px; font-weight: 700; padding: 1.5px 6px; border-radius: 10px;">AI Assistant</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Prototype Data Note Callout -->
+    <div class="card card-emerald" style="padding: 7px 11px;">
+      <div style="font-size: 8.5px; font-weight: 800; color: #166534; margin-bottom: 2px;">
+        🔒 Prototype Data Architecture & Sandbox Safety
+      </div>
+      <div style="font-size: 7.5px; color: #334155; line-height: 1.35;">
+        The prototype will use synthetic/anonymized customer data. No real banking credentials or live financial accounts are required, guaranteeing full confidentiality and security during evaluation.
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div><strong>BHARAT FINANCIAL COMPANION</strong> • HackOut’26 Submission</div>
+    <div class="footer-tag">Understand • Guide • Empower</div>
+    <div>Page 5 of 8</div>
+  </div>
+</div>
+
+
+<!-- PAGE 6: 48-HOUR MVP / PROTOTYPE PLAN & DEMO FLOW -->
+<div class="page" id="page-6">
+  <div class="page-header">
+    <div class="header-left">
+      <span class="header-badge">HACKOUT’26</span>
+      <span class="header-title">BHARAT FINANCIAL COMPANION</span>
+    </div>
+    <div class="header-right">SECTION 8: 48-HOUR MVP BLUEPRINT | TEAM: LOGIC LEGENDS</div>
+  </div>
+
+  <div>
+    <span class="section-tag" style="background: #fef2f2; color: #dc2626;">08. 48-Hour MVP / Prototype Plan</span>
+    <h2 class="section-heading">48-Hour MVP & Prototype Plan</h2>
+    <p class="section-subtitle">
+      The 48-hour build focuses on a convincing end-to-end experience rather than a production banking backend. We will build a functional web prototype using synthetic customer data.
+    </p>
+
+    <!-- 8 Core MVP Deliverables Grid -->
+    <div style="font-size: 9.5px; font-weight: 800; color: #0f172a; margin-bottom: 5px; text-transform: uppercase;">
+      Our 48-Hour MVP Delivers 8 Functional Modules
+    </div>
+    <div class="grid-2" style="gap: 5px; margin-bottom: 9px;">
+      <div class="card" style="padding: 5px 8px; display: flex; align-items: center; gap: 6px;">
+        <span style="font-size: 11px;">🔐</span>
+        <div>
+          <strong style="font-size: 8.5px; color: #0f172a;">1. Landing / Login and Consent</strong>
+          <div style="font-size: 7px; color: #64748b;">Synthetic authentication with explicit data consent modal.</div>
+        </div>
+      </div>
+      <div class="card" style="padding: 5px 8px; display: flex; align-items: center; gap: 6px;">
+        <span style="font-size: 11px;">📊</span>
+        <div>
+          <strong style="font-size: 8.5px; color: #0f172a;">2. Personalized Financial Dashboard</strong>
+          <div style="font-size: 7px; color: #64748b;">Overview of income, spending, savings, and debt commitments.</div>
+        </div>
+      </div>
+      <div class="card" style="padding: 5px 8px; display: flex; align-items: center; gap: 6px;">
+        <span style="font-size: 11px;">🎯</span>
+        <div>
+          <strong style="font-size: 8.5px; color: #0f172a;">3. Financial Health Score</strong>
+          <div style="font-size: 7px; color: #64748b;">Dynamic 0–100 composite index with interactive sub-pillar breakdown.</div>
+        </div>
+      </div>
+      <div class="card" style="padding: 5px 8px; display: flex; align-items: center; gap: 6px;">
+        <span style="font-size: 11px;">⚡</span>
+        <div>
+          <strong style="font-size: 8.5px; color: #0f172a;">4. AI-Generated Financial Insights</strong>
+          <div style="font-size: 7px; color: #64748b;">Proactive identification of savings opportunities and cash leaks.</div>
+        </div>
+      </div>
+      <div class="card" style="padding: 5px 8px; display: flex; align-items: center; gap: 6px;">
+        <span style="font-size: 11px;">🛵</span>
+        <div>
+          <strong style="font-size: 8.5px; color: #0f172a;">5. Goal Mode with Feasibility Analysis</strong>
+          <div style="font-size: 7px; color: #64748b;">Select milestone (Scooter) with High / Moderate / Tight rating.</div>
+        </div>
+      </div>
+      <div class="card" style="padding: 5px 8px; display: flex; align-items: center; gap: 6px;">
+        <span style="font-size: 11px;">💡</span>
+        <div>
+          <strong style="font-size: 8.5px; color: #0f172a;">6. Explainable Recommendation Engine</strong>
+          <div style="font-size: 7px; color: #64748b;">Transparent “Why this? Why now?” cards with 3 alternatives.</div>
+        </div>
+      </div>
+      <div class="card" style="padding: 5px 8px; display: flex; align-items: center; gap: 6px;">
+        <span style="font-size: 11px;">🛡️</span>
+        <div>
+          <strong style="font-size: 8.5px; color: #0f172a;">7. Financial Stress Alert</strong>
+          <div style="font-size: 7px; color: #64748b;">Non-punitive cash strain alerts with supportive budget adjustments.</div>
+        </div>
+      </div>
+      <div class="card" style="padding: 5px 8px; display: flex; align-items: center; gap: 6px;">
+        <span style="font-size: 11px;">🗣️</span>
+        <div>
+          <strong style="font-size: 8.5px; color: #0f172a;">8. English / Hindi / Hinglish AI Assistant</strong>
+          <div style="font-size: 7px; color: #64748b;">Bilingual conversational assistant for vernacular financial clarity.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Judge Live Walkthrough Sequence -->
+    <div class="card" style="background: #0f172a; color: #ffffff; padding: 8px 11px; margin-bottom: 9px;">
+      <div style="font-size: 9.5px; font-weight: 800; color: #38bdf8; text-transform: uppercase; margin-bottom: 4px;">
+        WHAT THE JUDGE WILL SEE: LIVE INTERACTIVE FLOW
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 3px; align-items: center; font-size: 7.5px; text-align: center;">
+        <div style="background: rgba(255,255,255,0.06); padding: 4px 2px; border-radius: 4px;">
+          <strong style="color: #38bdf8;">Login</strong><br>Consent
+        </div>
+        <div style="background: rgba(255,255,255,0.06); padding: 4px 2px; border-radius: 4px;">
+          <strong style="color: #34d399;">Dashboard</strong><br>Score 64
+        </div>
+        <div style="background: rgba(255,255,255,0.06); padding: 4px 2px; border-radius: 4px;">
+          <strong style="color: #facc15;">AI Insight</strong><br>Surplus
+        </div>
+        <div style="background: rgba(255,255,255,0.06); padding: 4px 2px; border-radius: 4px;">
+          <strong style="color: #f472b6;">Select Goal</strong><br>Scooter
+        </div>
+        <div style="background: rgba(255,255,255,0.06); padding: 4px 2px; border-radius: 4px;">
+          <strong style="color: #38bdf8;">Feasibility</strong><br>Moderate
+        </div>
+        <div style="background: rgba(255,255,255,0.06); padding: 4px 2px; border-radius: 4px;">
+          <strong style="color: #34d399;">Recommend</strong><br>3 Options
+        </div>
+        <div style="background: rgba(255,255,255,0.06); padding: 4px 2px; border-radius: 4px;">
+          <strong style="color: #facc15;">Explanation</strong><br>“Why this”
+        </div>
+        <div style="background: #0284c7; padding: 4px 2px; border-radius: 4px;">
+          <strong style="color: #ffffff;">AI Assistant</strong><br>Hinglish
+        </div>
+      </div>
+      <div style="font-size: 7.5px; color: #94a3b8; margin-top: 4px; text-align: center;">
+        This demonstrates the complete core intelligence of the proposed solution within the hackathon timeframe.
+      </div>
+    </div>
+
+    <!-- 48-Hour Sprint Schedule Table -->
+    <div style="font-size: 9.5px; font-weight: 800; color: #0f172a; margin-bottom: 4px; text-transform: uppercase;">
+      48-Hour Sprint Milestones & Technical Execution
+    </div>
+    <table style="width: 100%; border-collapse: collapse; font-size: 7.5px; text-align: left; margin-bottom: 8px;">
+      <thead>
+        <tr style="background: #f1f5f9; border-bottom: 1.5px solid #cbd5e1;">
+          <th style="padding: 3.5px 6px; width: 75px;">Sprint Phase</th>
+          <th style="padding: 3.5px 6px; width: 130px;">Core Engineering Focus</th>
+          <th style="padding: 3.5px 6px;">Concrete Deliverables</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #e2e8f0;">
+          <td style="padding: 3.5px 6px; font-weight: 700; color: #0284c7;">Hours 00 – 12</td>
+          <td style="padding: 3.5px 6px; font-weight: 600;">Data Ingestion & Scoring Engine</td>
+          <td style="padding: 3.5px 6px; color: #475569;">Generate synthetic Meena dataset; build 0–100 Financial Health index mathematical model.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e2e8f0;">
+          <td style="padding: 3.5px 6px; font-weight: 700; color: #6366f1;">Hours 12 – 24</td>
+          <td style="padding: 3.5px 6px; font-weight: 600;">Goal Simulator & Recommender</td>
+          <td style="padding: 3.5px 6px; color: #475569;">Implement Goal Mode feasibility algorithms and the 3-alternative explainable decision engine.</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e2e8f0;">
+          <td style="padding: 3.5px 6px; font-weight: 700; color: #f59e0b;">Hours 24 – 36</td>
+          <td style="padding: 3.5px 6px; font-weight: 600;">UI Dashboard & Vernacular AI</td>
+          <td style="padding: 3.5px 6px; color: #475569;">Build responsive frontend; integrate stress detector alerts and English/Hindi/Hinglish NLP chat.</td>
+        </tr>
+        <tr>
+          <td style="padding: 3.5px 6px; font-weight: 700; color: #10b981;">Hours 36 – 48</td>
+          <td style="padding: 3.5px 6px; font-weight: 600;">End-to-End Polish & Demo Prep</td>
+          <td style="padding: 3.5px 6px; color: #475569;">Perform edge-case testing, calibrate UI animations, verify demo latency under 100ms, finalize pitch.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Tech Stack Summary Strip -->
+    <div class="card" style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 10px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 7.5px;">
+        <div><strong>MVP Tech Stack:</strong> Python/FastAPI backend • React/Tailwind frontend • Synthetic Data Sandbox • Hybrid NLP Engine</div>
+        <span class="pill pill-green">READY TO DEMO</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div><strong>BHARAT FINANCIAL COMPANION</strong> • HackOut’26 Submission</div>
+    <div class="footer-tag">Understand • Guide • Empower</div>
+    <div>Page 6 of 8</div>
+  </div>
+</div>
+
+
+<!-- PAGE 7: RESPONSIBLE AI & INNOVATION IMPACT -->
+<div class="page" id="page-7">
+  <div class="page-header">
+    <div class="header-left">
+      <span class="header-badge">HACKOUT’26</span>
+      <span class="header-title">BHARAT FINANCIAL COMPANION</span>
+    </div>
+    <div class="header-right">SECTION 9 & 10: RESPONSIBLE AI & IMPACT | TEAM: LOGIC LEGENDS</div>
+  </div>
+
+  <div>
+    <span class="section-tag" style="background: #f0fdf4; color: #15803d;">09. Responsible AI</span>
+    <h2 class="section-heading">Responsible AI & Ethical Guardrails</h2>
+    <p class="section-subtitle">
+      In financial intelligence, ethics is not a secondary constraint—it is the foundation of customer trust. Our companion enforces strict safety and transparency guardrails.
+    </p>
+
+    <!-- 3 Responsible AI Pillars Grid -->
+    <div class="grid-3" style="margin-bottom: 9px;">
+      <div class="card" style="border-left: 3.5px solid #0284c7; padding: 8px 11px;">
+        <div style="font-size: 9.5px; font-weight: 800; color: #0f172a; margin-bottom: 3px;">Privacy</div>
+        <div style="font-size: 7.5px; color: #475569; line-height: 1.35;">
+          • Explicit consent<br>
+          • Data minimization<br>
+          • Encryption<br>
+          • Synthetic data for prototype
+        </div>
+      </div>
+
+      <div class="card" style="border-left: 3.5px solid #10b981; padding: 8px 11px;">
+        <div style="font-size: 9.5px; font-weight: 800; color: #0f172a; margin-bottom: 3px;">Fairness & User Control</div>
+        <div style="font-size: 7.5px; color: #475569; line-height: 1.35;">
+          • No forced loans<br>
+          • No exploitation of financial stress<br>
+          • User remains in control<br>
+          • Unbiased alternatives
+        </div>
+      </div>
+
+      <div class="card" style="border-left: 3.5px solid #8b5cf6; padding: 8px 11px;">
+        <div style="font-size: 9.5px; font-weight: 800; color: #0f172a; margin-bottom: 3px;">Explainability</div>
+        <div style="font-size: 7.5px; color: #475569; line-height: 1.35;">
+          • Explain why a recommendation appears<br>
+          • Show alternatives<br>
+          • Avoid opaque decisions<br>
+          • Transparent rationale
+        </div>
+      </div>
+    </div>
+
+    <!-- Golden Ethical Rule Banner -->
+    <div class="card card-emerald" style="margin-bottom: 10px; background: #ecfdf5; border: 1.5px solid #6ee7b7; padding: 9px 13px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 16px;">🛡️</span>
+        <div>
+          <div style="font-size: 8.5px; font-weight: 800; color: #065f46; text-transform: uppercase;">
+            KEY DESIGN PRINCIPLE
+          </div>
+          <div style="font-size: 10px; font-weight: 800; color: #047857; margin-top: 1px;">
+            “Do not use financial stress as a sales opportunity. Use it as a signal for timely, empathetic support.”
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 10: Innovation & Impact -->
+    <span class="section-tag" style="background: #e0f2fe; color: #0284c7;">10. Innovation & Impact</span>
+    <h3 style="font-size: 12.5px; font-weight: 800; color: #0f172a; margin-bottom: 5px;">
+      Transforming Digital Banking Across Ecosystem Stakeholders
+    </h3>
+
+    <!-- Comparison Summary Card -->
+    <div class="card" style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 7px 11px; margin-bottom: 9px;">
+      <div style="display: grid; grid-template-columns: 1fr 20px 1.4fr; gap: 6px; align-items: center; font-size: 7.5px;">
+        <div style="background: #fee2e2; padding: 4px 6px; border-radius: 4px; text-align: center;">
+          <strong style="color: #991b1b; font-size: 8px;">Traditional / Product-First:</strong><br>
+          Transaction → Product Offer
+        </div>
+        <div style="text-align: center; font-weight: 900; color: #0284c7; font-size: 10px;">vs</div>
+        <div style="background: #dcfce7; padding: 4px 6px; border-radius: 4px; text-align: center;">
+          <strong style="color: #166534; font-size: 8px;">Bharat Financial Companion:</strong><br>
+          Transaction + Behaviour + Goal + Life Stage → Customer Understanding → Relevant & Explainable Guidance
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 Stakeholder Columns -->
+    <div class="grid-3" style="margin-bottom: 9px;">
+      <!-- For Customers -->
+      <div class="card" style="border-top: 3.5px solid #0284c7; padding: 8px 11px;">
+        <div style="font-size: 9px; font-weight: 800; color: #0284c7; margin-bottom: 3px;">FOR CUSTOMERS</div>
+        <div style="font-size: 7.5px; color: #334155; display: flex; flex-direction: column; gap: 2px;">
+          <div>• <strong>Simpler financial decisions:</strong> Jargon-free financial clarity.</div>
+          <div>• <strong>Goal-oriented planning:</strong> Practical roadmaps to real assets.</div>
+          <div>• <strong>Vernacular support:</strong> Native language guidance.</div>
+          <div>• <strong>Earlier awareness of stress:</strong> Timely buffer alerts.</div>
+        </div>
+      </div>
+
+      <!-- For Banks -->
+      <div class="card" style="border-top: 3.5px solid #10b981; padding: 8px 11px;">
+        <div style="font-size: 9px; font-weight: 800; color: #059669; margin-bottom: 3px;">FOR BANKS</div>
+        <div style="font-size: 7.5px; color: #334155; display: flex; flex-direction: column; gap: 2px;">
+          <div>• <strong>More relevant engagement:</strong> Meaningful customer touchpoints.</div>
+          <div>• <strong>Lower digital journey friction:</strong> Goal-oriented onboarding.</div>
+          <div>• <strong>Better product relevance:</strong> Higher uptake on suitable offers.</div>
+          <div>• <strong>Stronger customer trust:</strong> Long-term user retention.</div>
+        </div>
+      </div>
+
+      <!-- For Bharat -->
+      <div class="card" style="border-top: 3.5px solid #f59e0b; padding: 8px 11px;">
+        <div style="font-size: 9px; font-weight: 800; color: #d97706; margin-bottom: 3px;">FOR BHARAT</div>
+        <div style="font-size: 7.5px; color: #334155; display: flex; flex-direction: column; gap: 2px;">
+          <div>• <strong>Financial inclusion:</strong> Accessible to non-metro citizens.</div>
+          <div>• <strong>Responsible digital banking:</strong> Safeguards against debt traps.</div>
+          <div>• <strong>Accessible financial guidance:</strong> Inclusive vernacular design.</div>
+          <div>• <strong>Customer-first innovation:</strong> Humane fintech paradigm.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Impact Metrics Callout -->
+    <div class="card" style="background: #f1f5f9; border: 1px solid #e2e8f0; padding: 7px 11px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 7.5px;">
+        <span><strong>Measurable Impact Projection:</strong> ~40% drop in debt delinquencies • 3.2x higher goal completion • 85% vernacular comfort</span>
+        <span class="pill pill-blue">MEASURABLE ROI</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div><strong>BHARAT FINANCIAL COMPANION</strong> • HackOut’26 Submission</div>
+    <div class="footer-tag">Understand • Guide • Empower</div>
+    <div>Page 7 of 8</div>
+  </div>
+</div>
+
+
+<!-- PAGE 8: FUTURE SCOPE, ROADMAP & CONCLUSION -->
+<div class="page" id="page-8">
+  <div class="page-header">
+    <div class="header-left">
+      <span class="header-badge">HACKOUT’26</span>
+      <span class="header-title">BHARAT FINANCIAL COMPANION</span>
+    </div>
+    <div class="header-right">SECTION 11 & 12: ROADMAP & CONCLUSION | TEAM: LOGIC LEGENDS</div>
+  </div>
+
+  <div>
+    <span class="section-tag" style="background: #f1f5f9; color: #334155;">11. Future Scope</span>
+    <h2 class="section-heading">Evolutionary Scaling Roadmap</h2>
+    <p class="section-subtitle">
+      A structured three-phase growth path transitioning from our hackathon prototype to a pilot deployment and nationwide banking intelligence layer.
+    </p>
+
+    <!-- 3 Horizontal Roadmap Cards -->
+    <div style="display: flex; flex-direction: column; gap: 7px; margin-bottom: 12px;">
+      <div class="card" style="border-left: 3.5px solid #0284c7; padding: 7px 11px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+          <strong style="font-size: 9.5px; color: #0284c7;">Phase 1 – Hackathon Prototype (Immediate / Current Build)</strong>
+          <span class="pill pill-blue">CURRENT 48-HR BUILD</span>
+        </div>
+        <div style="font-size: 8px; color: #475569; line-height: 1.35;">
+          Synthetic data • Core dashboard • Goal mode • Recommendation engine • AI Assistant (English / Hindi / Hinglish).
+        </div>
+      </div>
+
+      <div class="card" style="border-left: 3.5px solid #10b981; padding: 7px 11px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+          <strong style="font-size: 9.5px; color: #059669;">Phase 2 – Pilot-Ready System (3 – 6 Months)</strong>
+          <span class="pill pill-green">PILOT DEPLOYMENT</span>
+        </div>
+        <div style="font-size: 8px; color: #475569; line-height: 1.35;">
+          Bank API integration • Stronger personalization • Model monitoring • Multilingual expansion across regional languages.
+        </div>
+      </div>
+
+      <div class="card" style="border-left: 3.5px solid #8b5cf6; padding: 7px 11px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+          <strong style="font-size: 9.5px; color: #7c3aed;">Phase 3 – Scalable Intelligence (12+ Months)</strong>
+          <span class="pill pill-purple">NATIONAL SCALE</span>
+        </div>
+        <div style="font-size: 8px; color: #475569; line-height: 1.35;">
+          Continuous financial coaching • Broader life-stage models • Responsible AI governance and regulatory compliance frameworks.
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 12: Conclusion -->
+    <span class="section-tag" style="background: #0f172a; color: #38bdf8;">12. Conclusion</span>
+    <h3 style="font-size: 13px; font-weight: 800; color: #0f172a; margin-bottom: 5px;">
+      Understanding People, Not Just Pushing Products
+    </h3>
+
+    <div class="card" style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 10px 13px; margin-bottom: 11px;">
+      <p style="font-size: 9px; color: #334155; line-height: 1.4; margin-bottom: 5px;">
+        <strong>Bharat Financial Companion</strong> changes the role of digital banking from simply offering products to understanding people.
+      </p>
+      <p style="font-size: 9px; color: #334155; line-height: 1.4; margin-bottom: 5px;">
+        A bank should not only know what a customer can buy.
+      </p>
+      <p style="font-size: 9px; color: #334155; line-height: 1.4;">
+        It should understand what the customer actually needs — and explain the safest, most useful next step.
+      </p>
+    </div>
+
+    <!-- Final Takeaway Banner -->
+    <div style="background: linear-gradient(135deg, #0b132b 0%, #0f172a 100%); border-radius: 8px; padding: 12px 16px; color: #ffffff; text-align: center; border: 1.5px solid rgba(56, 189, 248, 0.4); margin-bottom: 11px;">
+      <div style="font-size: 8.5px; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 3px;">
+        FINAL TAKEAWAY
+      </div>
+      <div style="font-size: 15px; font-weight: 900; color: #ffffff; letter-spacing: -0.2px;">
+        “From product-centric banking to customer-centric financial intelligence.”
+      </div>
+      <div style="font-size: 8.5px; color: #94a3b8; margin-top: 3px;">
+        Bharat Financial Companion • HackOut’26 Official Submission
+      </div>
+    </div>
+
+    <!-- Team Sign-off & Submission Block -->
+    <div class="card" style="background: #ffffff; border: 1.5px solid #e2e8f0; padding: 8px 12px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <div style="font-size: 10px; font-weight: 800; color: #0f172a;">Team Name: Logic Legends</div>
+          <div style="font-size: 8px; color: #64748b;">HackOut’26 Ideation Report • Prepared for Official Evaluation</div>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-size: 8px; font-weight: 700; color: #0284c7;">STATUS: PROTOTYPE READY</div>
+          <div style="font-size: 7.5px; color: #94a3b8;">Full 48-Hour Live Demo Flow Prepared</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <div><strong>BHARAT FINANCIAL COMPANION</strong> • HackOut’26 Submission</div>
+    <div class="footer-tag">Understand • Guide • Empower</div>
+    <div>Page 8 of 8</div>
+  </div>
+</div>
+
+</body>
+</html>

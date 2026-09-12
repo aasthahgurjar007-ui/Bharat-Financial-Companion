@@ -1,0 +1,34 @@
+{
+    "name":  "frontend-for-hackout",
+    "version":  "1.0.0",
+    "main":  "index.js",
+    "scripts":  {
+                    "dev":  "vite",
+                    "build":  "vite build",
+                    "preview":  "vite preview"
+                },
+    "keywords":  [
+
+                 ],
+    "author":  "",
+    "license":  "ISC",
+    "description":  "",
+    "dependencies":  {
+                         "@tailwindcss/vite":  "^4.3.3",
+                         "clsx":  "^2.1.1",
+                         "framer-motion":  "^13.2.0",
+                         "lucide-react":  "^1.45.0",
+                         "react":  "^19.3.0",
+                         "react-dom":  "^19.3.0",
+                         "recharts":  "^3.10.1",
+                         "tailwind-merge":  "^3.6.0"
+                     },
+    "devDependencies":  {
+                            "@vitejs/plugin-react":  "^6.1.1",
+                            "autoprefixer":  "^10.5.6",
+                            "postcss":  "^8.5.28",
+                            "tailwindcss":  "^4.3.3",
+                            "vite":  "^8.3.0"
+                        },
+    "type":  "module"
+}
