@@ -1,25 +1,12 @@
-# 🇮🇳 Bharat Financial Companion - BFC
+# Bharat Financial Companion - BFC
 
-A smart financial companion for Bharat.
-
-## Features
-- User Financial Profile
-- Financial Score (like CIBIL but for habits)
-- AI-based Insights
-- Transaction History
+BFC is a financial dashboard backend for managing and tracking Bharat's financial data.
 
 ## Tech Stack
-- Node.js + Express (Backend)
-- HTML/CSS/JS (Dashboard)
+- Node.js
+- Express.js
+- MongoDB
 
-## API Endpoints
-- GET /api/user
-- GET /api/transactions
-- GET /api/score
-- GET /api/insights
+## Setup
 
-## How to run
-npm install
-node server.js
-
-Then open http://localhost:5000
+1. Clone the repo
