@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Bharat Financial Companion</title>
+<style>body{font-family:Arial;background:#f5f5f5;padding:20px} .card{background:white;padding:20px;border-radius:12px;margin:10px;box-shadow:0 2px 10px #0001} h1{color:#1a73e8}</style>
+</head>
+<body>
+<h1>🇮🇳 Bharat Financial Companion - BFC</h1>
+<div class="card"><h3>User Info</h3><div id="user"></div></div>
+<div class="card"><h3>Financial Score</h3><div id="score"></div></div>
+<div class="card"><h3>Insights (AI)</h3><div id="insights"></div></div>
+<div class="card"><h3>Transactions</h3><div id="tx"></div></div>
+<script>
+fetch('/api/user').then(r=>r.json()).then(d=>document.getElementById('user').innerHTML=`Name: ${d.name}<br>Balance: ₹${d.balance}`);
+fetch('/api/score').then(r=>r.json()).then(d=>document.getElementById('score').innerHTML=`Score: ${d.score} (${d.level})<br>${d.message}`);
+fetch('/api/insights').then(r=>r.json()).then(d=>document.getElementById('insights').innerHTML=d.join('<br>'));
+fetch('/api/transactions').then(r=>r.json()).then(d=>document.getElementById('tx').innerHTML=d.map(t=>`${t.title}: ₹${t.amount}`).join('<br>'));
+</script>
+</body>
+</html>
